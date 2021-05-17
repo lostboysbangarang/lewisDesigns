@@ -80,13 +80,26 @@ html a, body a {
 
 .sectionDiv {
   background-color: #010A67;
-  height: 18.75vw;
+  height: 22vw;
   padding-top: 0.1vw;
 }
 .sectionDiv_d1 {
-  background-repeat: no-repeat;
   height: 7vw;
-  margin-top: 12.5vw;
+  margin-top: 15.5vw;
+}
+.sectionDiv_d1 img {
+  width: 44.9vw;
+}
+.sectionDiv_d2 {
+  margin-top: -4.5vw;
+  margin-left: 10.5vw;
+}
+.sectionDiv_d2 img {
+  width: 56.6vw;
+}
+.sectionDiv_d3 {
+  margin-top: -19.1vw;
+  margin-left: 20vw;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -95,15 +95,29 @@ html,body {
 
 .sectionDiv {
     background-color: $Azul;
-    height: 18.75vw;
+    height: 22vw;
     padding-top: .1vw;
     &_d1 {
         // background-image: url(../resources/drawer/drawerL1.png);
-        background-repeat: no-repeat;
+        // background-repeat: no-repeat;
+        & img {
+            width: 44.9vw;
+        }
         height: 7vw;
-        margin-top: 12.5vw;
+        margin-top: 15.5vw;
     }
     &_d2 {
+        // background-repeat: no-repeat;
+        // background-image: url(../resources/drawer/drawerL2.png);
+        margin-top: -4.5vw;
+        margin-left: 10.5vw;
+        & img {
+            width: 56.6vw;
+        }
 
+    }
+    &_d3 {
+        margin-top: -19.1vw;
+        margin-left: 20vw;
     }
 }
