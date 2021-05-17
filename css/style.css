@@ -18,7 +18,6 @@ html a, body a {
 .sticky {
   height: 75px;
   width: 100vw;
-  background-color: aquamarine;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,9 +36,57 @@ html a, body a {
 }
 
 .intro {
-  height: 92.574257vh;
+  height: 48.56vw;
   background-image: url(../resources/introBackground.png);
   background-size: cover;
+}
+.intro_text {
+  width: 66.1458333333vw;
+  height: 31.25vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1vw;
+  color: white;
+}
+.intro_text_logo1 {
+  font-family: dual300;
+  font-size: 5vw;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  margin-top: 10vw;
+}
+.intro_text_logo2 {
+  font-family: allura;
+  display: flex;
+  font-weight: normal;
+  justify-content: center;
+  font-size: 6vw;
+  margin-top: -5vw;
+}
+.intro_text_text {
+  margin-left: 8vw;
+  margin-top: -4vw;
+  width: 49.21875vw;
+  font-weight: normal;
+}
+.intro_text_text_text {
+  font-size: 1.75vw;
+}
+.intro_text_text_txt {
+  margin-top: 2vw;
+  font-size: 1vw;
+}
+
+.sectionDiv {
+  background-color: #010A67;
+  height: 18.75vw;
+  padding-top: 0.1vw;
+}
+.sectionDiv_d1 {
+  background-repeat: no-repeat;
+  height: 7vw;
+  margin-top: 12.5vw;
 }
 
 /*# sourceMappingURL=style.css.map */
