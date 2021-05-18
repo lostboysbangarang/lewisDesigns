@@ -11,6 +11,19 @@
     transform: translateX(0vw);
   }
 }
+@keyframes right2 {
+  100% {
+    transform: translateX(22vw);
+  }
+}
+@keyframes right21 {
+  from {
+    transform: translateX(22vw);
+  }
+  to {
+    transform: translateX(0vw);
+  }
+}
 @keyframes left3 {
   50% {
     transform: translateX(-22vw);
@@ -28,6 +41,31 @@
 @keyframes left31 {
   from {
     transform: translateX(-47vw);
+  }
+  50% {
+    transform: translateX(0vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+@keyframes right3 {
+  50% {
+    transform: translateX(22vw);
+  }
+  51% {
+    transform: translateX(24vw);
+  }
+  52% {
+    transform: translateX(28vw);
+  }
+  100% {
+    transform: translateX(47vw);
+  }
+}
+@keyframes right31 {
+  from {
+    transform: translateX(47vw);
   }
   50% {
     transform: translateX(0vw);
@@ -152,24 +190,43 @@ html a, body a {
 .sectionDiv_d3 img {
   width: 79vw;
 }
+.sectionDiv_d4 {
+  height: 7vw;
+  margin-top: 15.5vw;
+  margin-left: 54.2vw;
+}
+.sectionDiv_d4 img {
+  width: 44.9vw;
+}
+.sectionDiv_d5 {
+  margin-top: -4.5vw;
+  margin-left: 32vw;
+}
+.sectionDiv_d5 img {
+  width: 56.6vw;
+}
+.sectionDiv_d6 {
+  margin-top: -19.1vw;
+}
+.sectionDiv_d6 img {
+  width: 79vw;
+}
 
 .kitchCab {
-  height: 37.5vw;
+  height: 37.2vw;
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
   z-index: -100;
 }
 .kitchCab_poly {
-  height: 37.25vw;
+  height: 37.55vw;
   margin-top: -37.55vw;
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 100;
   position: relative;
-}
-.kitchCab_poly img {
-  height: 37.25vw;
+  background-image: url(../resources/polyL.png);
 }
 
 /*# sourceMappingURL=style.css.map */

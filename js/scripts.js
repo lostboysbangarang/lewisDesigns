@@ -34,8 +34,18 @@ $(document).ready(function(){
             document.getElementById("blickyL3").style.animation=document.getElementById("blickyL3").dataset.anime+"1 "+document.getElementById("blickyL3").dataset.time+"ms forwards ease-in";
 
         }
-        
-        console.log("fuick");
+    }
+    document.getElementById("blicky2").onclick=function() {
+        if (tf==0){
+            document.getElementById("blickyR2").style.animation=document.getElementById("blickyR2").dataset.anime+" "+document.getElementById("blickyR2").dataset.time+"ms forwards ease-in";
+            document.getElementById("blickyR3").style.animation=document.getElementById("blickyR3").dataset.anime+" "+document.getElementById("blickyR3").dataset.time+"ms forwards ease-in";
+            tf=1;
+        } else {
+            tf=0;
+            document.getElementById("blickyR2").style.animation=document.getElementById("blickyR2").dataset.anime+"1 "+document.getElementById("blickyR2").dataset.time+"ms forwards ease-in";
+            document.getElementById("blickyR3").style.animation=document.getElementById("blickyR3").dataset.anime+"1 "+document.getElementById("blickyR3").dataset.time+"ms forwards ease-in";
+
+        }
     }
     
 });
