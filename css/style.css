@@ -157,12 +157,16 @@ html a, body a {
   height: 37.5vw;
   background-size: contain;
   background-repeat: no-repeat;
+  position: relative;
+  z-index: -100;
 }
 .kitchCab_poly {
   height: 37.25vw;
   margin-top: -37.55vw;
   background-size: contain;
   background-repeat: no-repeat;
+  z-index: 100;
+  position: relative;
 }
 .kitchCab_poly img {
   height: 37.25vw;

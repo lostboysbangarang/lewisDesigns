@@ -215,6 +215,8 @@ html,body {
     height: 37.5vw;
     background-size: contain;
     background-repeat: no-repeat;
+    position: relative;
+    z-index: -100;
     &_poly{
         height: 37.25vw;
         margin-top: -37.55vw;
@@ -223,6 +225,8 @@ html,body {
         }
         background-size: contain;
         background-repeat: no-repeat;
+        z-index: 100;
+        position: relative;
         // background-image: url(../resources/polyL.png);
         // margin-left: 20vw;
     }
