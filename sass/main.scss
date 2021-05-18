@@ -15,12 +15,15 @@ $Azul: #010A67;
         transform: translateX(-22vw);
     }
 }
-@keyframes left2 {
+@keyframes left3 {
     0% {
 
     }
     50% {
         transform: translateX(-22vw);
+    }
+    100% {
+        transform: translateX(-32vw);
     }
 }
 

@@ -3,9 +3,12 @@
     transform: translateX(-22vw);
   }
 }
-@keyframes left2 {
+@keyframes left3 {
   50% {
     transform: translateX(-22vw);
+  }
+  100% {
+    transform: translateX(-32vw);
   }
 }
 html, body {
