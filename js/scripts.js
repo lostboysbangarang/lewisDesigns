@@ -1,4 +1,5 @@
 var tf=0;
+var tf2=0;
 var xhr=new XMLHttpRequest();
 var urls= [];
 var slideUrl=[];
@@ -36,12 +37,12 @@ $(document).ready(function(){
         }
     }
     document.getElementById("blicky2").onclick=function() {
-        if (tf==0){
+        if (tf2==0){
             document.getElementById("blickyR2").style.animation=document.getElementById("blickyR2").dataset.anime+" "+document.getElementById("blickyR2").dataset.time+"ms forwards ease-in";
             document.getElementById("blickyR3").style.animation=document.getElementById("blickyR3").dataset.anime+" "+document.getElementById("blickyR3").dataset.time+"ms forwards ease-in";
-            tf=1;
+            tf2=1;
         } else {
-            tf=0;
+            tf2=0;
             document.getElementById("blickyR2").style.animation=document.getElementById("blickyR2").dataset.anime+"1 "+document.getElementById("blickyR2").dataset.time+"ms forwards ease-in";
             document.getElementById("blickyR3").style.animation=document.getElementById("blickyR3").dataset.anime+"1 "+document.getElementById("blickyR3").dataset.time+"ms forwards ease-in";
 
@@ -192,8 +193,8 @@ function prepareAnime(element){
 
 async function slideRight(urlPath, i) {
     // console.log("URL Path:");
-    console.log(urlPath);
-    console.log(urlPath[0].length);
+    // console.log(urlPath);
+    // console.log(urlPath[0].length);
     if (i==urlPath[0].length) {
         // console.log("URL path length:     "+urlPath);
         i=0;
