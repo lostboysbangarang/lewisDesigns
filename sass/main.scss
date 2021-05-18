@@ -1,6 +1,48 @@
 $text: #000000;
 $Azul: #010A67;
 
+
+
+
+
+
+
+@keyframes left2 {
+    0% {
+
+    }
+    100% {
+        transform: translateX(-22vw);
+    }
+}
+@keyframes left2 {
+    0% {
+
+    }
+    50% {
+        transform: translateX(-22vw);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 html,body {
     width: 100%;
     height: 100%;
@@ -117,6 +159,11 @@ html,body {
 
     }
     &_d3 {
+        // background-repeat: no-repeat;
+        // background-image: url(../resources/drawer/DrawerL3.png);
+        & img {
+            width: 79vw;
+        }
         margin-top: -19.1vw;
         margin-left: 20vw;
     }

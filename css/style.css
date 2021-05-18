@@ -1,3 +1,13 @@
+@keyframes left2 {
+  100% {
+    transform: translateX(-22vw);
+  }
+}
+@keyframes left2 {
+  50% {
+    transform: translateX(-22vw);
+  }
+}
 html, body {
   width: 100%;
   height: 100%;
@@ -100,6 +110,9 @@ html a, body a {
 .sectionDiv_d3 {
   margin-top: -19.1vw;
   margin-left: 20vw;
+}
+.sectionDiv_d3 img {
+  width: 79vw;
 }
 
 /*# sourceMappingURL=style.css.map */
