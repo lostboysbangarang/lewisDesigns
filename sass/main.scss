@@ -59,7 +59,7 @@ $Azul: #010A67;
 @keyframes slideRight{
     0% {
         opacity: 0;
-        transform: translateX(-100vw);
+        transform: translateX(100vw);
     }
     100% {
         opacity: 1;
@@ -215,4 +215,15 @@ html,body {
     height: 37.5vw;
     background-size: contain;
     background-repeat: no-repeat;
+    &_poly{
+        height: 37.25vw;
+        margin-top: -37.55vw;
+        & img {
+            height: 37.25vw;
+        }
+        background-size: contain;
+        background-repeat: no-repeat;
+        // background-image: url(../resources/polyL.png);
+        // margin-left: 20vw;
+    }
 }

@@ -5,10 +5,13 @@ var slideUrl=[];
 var slidePhotos=[];
 var mePlease=[];
 var please=[];
-var time=5000;
+var time=3000;
+var $time=5;
+var $timeFade=$time*.25;
 var timer;
 var j;
-const kitchCard=document.getElementById("kitchen");
+var kitchCard=document.getElementById("kitchen");
+var kitchPoly=document.getElementById("kitchenPoly1");
 
 
 
@@ -43,7 +46,57 @@ if(document.readyState==="loading"){
 }
 function afterLoaded() {
     slideShow();
+    // loop();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TweenLite.to(kitchCard, 0, {})
+
+
+// function loop() {
+
+//     requestAnimationFrame(loop);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function slideShow() {
@@ -77,6 +130,56 @@ function hug(you, me) {
     // console.log("Me:     "+me);
     return me;
 }
+
+
+
+
+
+function actualAnimations(){
+    console.log("Promise");
+    Promise.resolve(kitchCard)
+        .then(prepareAnime)
+        .then(playAnime);
+    
+}
+function actualAnimations2(){
+    Promise.resolve(kitchPoly)
+        .then(prepareAnime)
+        .then(playAnime2);
+}
+var anime ={
+    slideR: (element, done)=>{
+        Tween.set(element, {autoAlpha: 0, translateX: "-100vw"});
+        Tween.to(element, time, {autoAlpha: 1, translateX:"0vw", onComplete: done});
+    },
+    slideL: (element, done)=>{
+        Tween.set(element, {autoAlpha: 0, translateX: "-100vw"});
+        Tween.to(element, time, {autoAlpha: 1, translateX:"0vw", onComplete: done});
+    }
+}
+function animate(element, animation){
+    return new Promise(resolve => animation(element, resolve));
+}
+async function playAnime(element){
+    console.log("Play");
+    await animate(element, anime.slideR);
+}
+async function playAnime2(element){
+    console.log("Play");
+    await animate(element, anime.slideL);
+}
+function prepareAnime(element){
+    console.log("Prepare");
+    console.log(element);
+    console.log(element.style);
+    TweenMax.to(element, {clearProps: "animation"});
+    console.log(element.style);
+    return element;
+}
+
+
+
+
 async function slideRight(urlPath, i) {
     // console.log("URL Path:");
     console.log(urlPath);
@@ -89,7 +192,7 @@ async function slideRight(urlPath, i) {
         console.log("Help me:     ");
         console.log(kitchCard);
         document.getElementById("kitchen").style.backgroundImage="url("+urlPath[0][i]+")";
-        kitchCard.style.animation="slideRight "+time+"ms ease-out forwards";
+        kitchCard.style.animation="slideRight "+time*.05+"ms ease-out forwards";
     }
     if (i<urlPath[0].length) {
         i=i+1;
@@ -98,4 +201,7 @@ async function slideRight(urlPath, i) {
         i=0;
         slideRight(urlPath, i);
     }
+    actualAnimations()
+    // actualAnimations2();
 }
+
