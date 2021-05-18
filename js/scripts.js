@@ -111,7 +111,7 @@ function afterLoaded() {
 
 function slideShow() {
     for (i=0; i<urls.length; i++) {
-        urls[i]=window.location.origin+"/resources/"+urls[i];
+        urls[i]=window.location.origin+window.location.pathname+"/resources/"+urls[i];
         for (j=0; j<1000; j++) {
             kj=j+1;
             url=""+urls[i]+""+kj+".png";
