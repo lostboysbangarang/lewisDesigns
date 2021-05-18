@@ -1,6 +1,6 @@
 $text: #000000;
 $Azul: #010A67;
-
+$Gold: #E8B923;
 
 
 
@@ -116,8 +116,38 @@ $Azul: #010A67;
         transform: translateX(0vw);
     }
 }
-
-
+@keyframes text1 {
+    0% {
+        opacity: 0;
+    }
+    33% {
+        opacity: 0;
+        transform: rotateY(90deg);
+    }
+    60% {
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes text11 {
+    0% {
+        opacity: 1;
+    }
+    8% {
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+    25% {
+        opacity: 0;
+        transform: rotateY(90deg);
+    }
+    100% {
+        opacity: 0;
+    }
+}
 
 
 
@@ -231,6 +261,7 @@ html,body {
     background-color: $Azul;
     height: 22vw;
     padding-top: .1vw;
+    perspective: 1000px;
     &_d1 {
         // background-image: url(../resources/drawer/drawerL1.png);
         // background-repeat: no-repeat;
@@ -279,6 +310,24 @@ html,body {
             width: 79vw;
         }
         margin-top: -19.1vw;
+    }
+    &_text {
+        // z-index: 1000;
+        // position: relative;
+        // margin-top: -20vw;
+        // perspective: 100px;
+        color: white;
+        margin-left: 65vw;
+        margin-top: -14vw;
+        font-size: 2vw;
+        // background-color: aqua;
+        // text-shadow: 2px 1px $Gold;
+        transform-style: preserve-3d;
+        width: 20vw;
+        display: flex;
+        // visibility: hidden;
+        opacity: 0;
+        text-align: center;
     }
 }
 

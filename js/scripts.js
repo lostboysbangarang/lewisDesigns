@@ -28,12 +28,13 @@ $(document).ready(function(){
         if (tf==0){
             document.getElementById("blickyL2").style.animation=document.getElementById("blickyL2").dataset.anime+" "+document.getElementById("blickyL2").dataset.time+"ms forwards ease-in";
             document.getElementById("blickyL3").style.animation=document.getElementById("blickyL3").dataset.anime+" "+document.getElementById("blickyL3").dataset.time+"ms forwards ease-in";
+            document.getElementById("text1").style.animation=document.getElementById("text1").dataset.anime+" "+document.getElementById("text1").dataset.time+"ms forwards ease-in";
             tf=1;
         } else {
             tf=0;
             document.getElementById("blickyL2").style.animation=document.getElementById("blickyL2").dataset.anime+"1 "+document.getElementById("blickyL2").dataset.time+"ms forwards ease-in";
             document.getElementById("blickyL3").style.animation=document.getElementById("blickyL3").dataset.anime+"1 "+document.getElementById("blickyL3").dataset.time+"ms forwards ease-in";
-
+            document.getElementById("text1").style.animation=document.getElementById("text1").dataset.anime+"1 "+document.getElementById("text1").dataset.time+"ms forwards ease-in";
         }
     }
     document.getElementById("blicky2").onclick=function() {
