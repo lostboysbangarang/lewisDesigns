@@ -36,6 +36,16 @@
     transform: translateX(0vw);
   }
 }
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0vw);
+  }
+}
 html, body {
   width: 100%;
   height: 100%;
@@ -141,6 +151,12 @@ html a, body a {
 }
 .sectionDiv_d3 img {
   width: 79vw;
+}
+
+.kitchCab {
+  height: 37.5vw;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /*# sourceMappingURL=style.css.map */

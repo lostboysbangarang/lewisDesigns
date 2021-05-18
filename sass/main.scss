@@ -6,7 +6,6 @@ $Azul: #010A67;
 
 
 
-
 @keyframes left2 {
     0% {
 
@@ -57,8 +56,16 @@ $Azul: #010A67;
         transform: translateX(0vw);
     }
 }
-
-
+@keyframes slideRight{
+    0% {
+        opacity: 0;
+        transform: translateX(-100vw);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0vw);
+    }
+}
 
 
 
@@ -202,4 +209,10 @@ html,body {
         margin-top: -19.1vw;
         margin-left: 20vw;
     }
+}
+
+.kitchCab {
+    height: 37.5vw;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
