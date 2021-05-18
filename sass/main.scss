@@ -16,10 +16,10 @@ $Azul: #010A67;
     }
 }
 @keyframes left21 {
-    0% {
-
+    from {
+        transform: translateX(-22vw);
     }
-    100% {
+    to {
         transform: translateX(0vw);
     }
 }
@@ -41,9 +41,18 @@ $Azul: #010A67;
     }
 }
 @keyframes left31 {
-    0% {
-
+    from {
+        transform: translateX(-47vw);
     }
+    50% {
+        transform: translateX(0vw);
+    }
+    // 51% {
+    //     transform: translateX(24vw);
+    // }
+    // 52% {
+    //     transform: translateX(28vw);
+    // }
     100% {
         transform: translateX(0vw);
     }
