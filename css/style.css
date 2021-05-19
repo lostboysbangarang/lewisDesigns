@@ -123,7 +123,8 @@ html, body {
   overflow-x: hidden;
   margin: 0px;
   padding: 0px;
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Montserrat", serif;
+  font-weight: 400;
   color: #000000;
 }
 html input:focus, html textarea:focus, html select:focus, body input:focus, body textarea:focus, body select:focus {
@@ -266,11 +267,37 @@ html a, body a {
 .kitchCab_poly {
   height: 37.55vw;
   margin-top: -37.55vw;
+  padding-top: 1px;
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 100;
   position: relative;
   background-image: url(../resources/polyL.png);
+}
+.kitchCab_poly_text {
+  color: #E8B923;
+  font-size: 2vw;
+  width: 21vw;
+  height: 7vw;
+  text-align: center;
+  margin-top: 7vw;
+  margin-left: 17.5vw;
+  text-shadow: 1px 1px #010A67;
+}
+.kitchCab_poly_text_explore {
+  font-size: 1.5vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1vw;
+  width: 14vw;
+  height: 3vw;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #2f2f31;
+  color: #E8B923;
+  text-shadow: 1px 1px #010A67;
+  padding-top: 1vw;
+  border: 0.15vw solid #E8B923;
 }
 
 /*# sourceMappingURL=style.css.map */

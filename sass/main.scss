@@ -1,7 +1,7 @@
 $text: #000000;
 $Azul: #010A67;
 $Gold: #E8B923;
-
+$Grey: #2f2f31;
 
 
 
@@ -172,7 +172,8 @@ html,body {
     overflow-x: hidden;
     margin: 0px;
     padding: 0px;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Montserrat', serif;
+    font-weight: 400;
     color: $text;
     input:focus, textarea:focus, select:focus {
         outline: none;
@@ -340,11 +341,80 @@ html,body {
     &_poly{
         height: 37.55vw;
         margin-top: -37.55vw;
+        padding-top: 1px;
         background-size: contain;
         background-repeat: no-repeat;
         z-index: 100;
         position: relative;
         background-image: url(../resources/polyL.png);
         // margin-left: 20vw;
+        &_text {
+            color: $Gold;
+            font-size: 2vw;
+            // background-color: aqua;
+            width: 21vw;
+            height: 7vw;
+            text-align: center;
+            margin-top: 7vw;
+            margin-left: 17.5vw;
+            text-shadow: 1px 1px $Azul;
+            &_explore {
+                font-size: 1.5vw;
+                margin-left: auto;
+                margin-right: auto;
+                // padding-left: .5vw;
+                margin-top: 1vw;
+                width: 14vw;
+                height: 3vw;
+                // align-items: center;
+                text-transform: uppercase;
+                text-align: center;
+                background-color: $Grey;
+                color: $Gold;
+                text-shadow: 1px 1px $Azul;
+                padding-top: 1vw;
+                // text-shadow: none;
+                border: .15vw solid $Gold;
+                // // transition: 20ms 200ms cubic-bezier(.1, 0, .1, 1);
+                // // display: inline-block;
+                // // &::before {
+                // //     content: "";
+                // //     display: inline-block;
+                // //     position: absolute;
+                // //     top: 0;
+                // //     left: 0;
+                // //     right: 100%;
+                // //     bottom: 0;
+                // //     background: $Gold;
+                // //     transition: 300ms 200ms cubic-bezier(.1, 0, .1, 1), left 300ms cubic-bezier(.1, 0, .1, 1);
+                // //     z-index: -1;
+                // // }
+                // // &::after {
+                // //     content: "";
+                // //     background-image: url(https://image.flaticon.com/icons/png/128/109/109617.png);
+                // //     position: absolute;
+                // //     top: 0;
+                // //     left: calc(100%-3em);
+                // //     right: 3em;
+                // //     bottom: 0;
+                // //     background-size: 1.5em;
+                // //     background-repeat: no-repeat;
+                // //     background-position: center;
+                // //     transition: right 300ms cubic-bezier(.1, 0, .1, 1);
+                // // }
+                // // &:hover {
+                // //     padding: .5em 3.5em .5em .5em;
+                // //     &::before {
+                // //         left: calc(100%-3em);
+                // //         right: 0;
+                // //         transition: 300ms cubic-bezier(.1, 0, .1, 1), left 300ms 200ms cubic-bezier(.1, 0, .1, 1);
+                // //     }
+                // //     &::after {
+                // //         right: 0;
+                // //         transition: right 300ms 200ms cubic-bezier(.1, 0, .1, 1);
+                // //     }
+                // // }
+            }
+        }
     }
 }
