@@ -6,14 +6,20 @@ var slideUrl=[];
 var slidePhotos=[];
 var mePlease=[];
 var please=[];
-var time=3000;
+var time=6000;
 var $time=5;
 var $timeFade=$time*.25;
 var timer;
 var j;
+var iii=false;
+var jjj=false;
 var kitchCard=document.getElementById("kitchen");
 var kitchPoly=document.getElementById("kitchenPoly1");
-
+var timeoutI;
+var timeoutII;
+var timeoutIII;
+var timeoutIV;
+var timeoutV;
 
 
 urls[0]="kitchenSlide/k";
@@ -63,17 +69,6 @@ function afterLoaded() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // TweenLite.to(kitchCard, 0, {})
 
 
@@ -81,34 +76,6 @@ function afterLoaded() {
 
 //     requestAnimationFrame(loop);
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function slideShow() {
@@ -133,7 +100,7 @@ function slideShow() {
         hug(mePlease, please);
     }
     // console.log(slidePhotos);
-    timer=setInterval(slideRight(slidePhotos, 0), time);
+    // timer=setInterval(slideRight(slidePhotos, 0), time);
 }
 function hug(you, me) {
     for (let y=0, len=you.length; y<len; y++){
@@ -147,33 +114,35 @@ function hug(you, me) {
 
 
 
-function actualAnimations(){
-    console.log("Promise");
-    Promise.resolve(kitchCard)
+function actualAnimations(element){
+    // console.log("Promise Element");
+    // console.log(element);
+    Promise.resolve(element)
         .then(prepareAnime)
         .then(playAnime);
     
 }
-function actualAnimations2(){
-    Promise.resolve(kitchPoly)
-        .then(prepareAnime)
-        .then(playAnime2);
-}
+// function actualAnimations2(){
+//     Promise.resolve(kitchPoly)
+//         .then(prepareAnime)
+//         .then(playAnime2);
+// }
 var anime ={
     slideR: (element, done)=>{
-        Tween.set(element, {autoAlpha: 0, translateX: "-100vw"});
-        Tween.to(element, time, {autoAlpha: 1, translateX:"0vw", onComplete: done});
+        TweenMax.set(element, {autoAlpha: 0, translateX: "50vw"});
+        TweenMax.to(element, 1, {autoAlpha: 1, translateX:"0vw"});
     },
     slideL: (element, done)=>{
-        Tween.set(element, {autoAlpha: 0, translateX: "-100vw"});
-        Tween.to(element, time, {autoAlpha: 1, translateX:"0vw", onComplete: done});
+        TweenMax.set(element, {autoAlpha: 0, translateX: "-100vw"});
+        TweenMax.to(element, 1, {autoAlpha: 1, translateX:"0vw"});
     }
 }
 function animate(element, animation){
     return new Promise(resolve => animation(element, resolve));
 }
 async function playAnime(element){
-    console.log("Play");
+    // console.log("Play");
+    // console.log(element);
     await animate(element, anime.slideR);
 }
 async function playAnime2(element){
@@ -181,39 +150,97 @@ async function playAnime2(element){
     await animate(element, anime.slideL);
 }
 function prepareAnime(element){
-    console.log("Prepare");
-    console.log(element);
-    console.log(element.style);
+    // console.log("Prepare");
+    // console.log(element);
+    // console.log(element);
+    // console.log(element.style);
     TweenMax.to(element, {clearProps: "animation"});
-    console.log(element.style);
+    // console.log(element.style);
     return element;
 }
 
 
 
 
-async function slideRight(urlPath, i) {
-    // console.log("URL Path:");
-    // console.log(urlPath);
-    // console.log(urlPath[0].length);
-    if (i==urlPath[0].length) {
-        // console.log("URL path length:     "+urlPath);
-        i=0;
+async function slideRight(urlPath, element, i) {
+    // console.log("\t\t\tSlide Start");
+    // console.log("\tI:\t\t"+i);
+    if (iii) {
+        const lgnth=urlPath[0].length-1;
+        if (i==lgnth) {
+            // console.log("URL path length:     "+urlPath);
+            i=0;
+        }
+        if (typeof urlPath[0][i] != "undefined") {
+            // console.log("Help me:     ");
+            // console.log(element[0]);
+            element[0].target.style.backgroundImage="url("+urlPath[0][i]+")";
+            // element.style.animation="slideRight "+time*.05+"ms ease-out forwards";
+        }
+        // console.log("URL Path:\t\t"+urlPath[0][i]);
+        // console.log("URL length:\t\t"+urlPath[0].length);
+        // console.log("URL Index:\t\t"+lgnth);
+        if (i<urlPath[0].length) {
+            // console.log("Prev I:\t\t"+i);
+            i++;
+            // console.log("New I:\t\t"+i);
+        //     i=i+1;
+            timeoutI=setTimeout(slideRight, time, urlPath, element, i);
+            actualAnimations(element[0].target);
+
+        } else {
+            // i=0;
+        }
+        // } else {
+        //     i=0;
+        //     slideRight(urlPath, i);
+        // }
+        // actualAnimations(element);
+        // actualAnimations(element);
     }
-    if (typeof urlPath[0][i] != "undefined") {
-        console.log("Help me:     ");
-        console.log(kitchCard);
-        document.getElementById("kitchen").style.backgroundImage="url("+urlPath[0][i]+")";
-        kitchCard.style.animation="slideRight "+time*.05+"ms ease-out forwards";
-    }
-    if (i<urlPath[0].length) {
-        i=i+1;
-        setTimeout(slideRight, time, urlPath, i);
-    } else {
-        i=0;
-        slideRight(urlPath, i);
-    }
-    actualAnimations()
+    
     // actualAnimations2();
 }
 
+
+
+
+
+
+
+
+
+const opts={
+    root: null,
+    threshold: .5,
+    rootMargin: "0%"
+}
+const optsII={
+    root: null,
+    threshold: 0,
+    rootMargin: "0%"
+}
+observer = new IntersectionObserver((entry) =>{
+    if (entry[0].target==kitchCard && jjj && !iii) {
+        // console.log("\t\tMarking target Alpha");
+        iii=true;
+        slideRight(slidePhotos, entry, 0);
+    } else {
+        jjj=true;
+    }
+    // console.log("\t\Finding target Alpha");
+    // console.log(entry[0].target);
+    // window.clearTimeout(timeoutI);
+    // iii=true;
+    
+    // timeoutI=slideRight(slidePhotos, entry, 0)
+}, opts);
+observerII = new IntersectionObserver((entry) => {
+    if (jjj) {
+        // console.log("I IntObv:\t\t"+i);
+        window.clearTimeout(timeoutI);
+        iii=false;
+    }
+}, optsII);
+observer.observe(kitchCard);
+observerII.observe(kitchCard);

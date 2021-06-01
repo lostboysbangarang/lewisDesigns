@@ -447,9 +447,17 @@ html,body {
                         width: 100%;
                         text-align: center;
                         padding: none;
-                        margin-left: -1.25vw;
+                        margin-left: -10%;
                         transition: all 800ms ease;
                     }
+                }
+                &_arrow {
+                    margin-top: -4.15vw;
+                    margin-left: 8vw;
+                    color: $Grey;
+                    visibility: hidden;
+                    text-shadow: none;
+                    font-size: 3vw;
                 }
                 &:hover {
                     background-position: left bottom;
@@ -457,9 +465,13 @@ html,body {
                 }
                 &:hover > ul > li {
                     width: 0vw;
-                    margin-left: -2.1vw;
+                    margin-left: -15%;
                     // color: $Azul;
                     left: 1vw;
+                }
+                &:hover > div {
+                    visibility: visible;
+                    transition-duration: 1000ms;
                 }
             }
         }

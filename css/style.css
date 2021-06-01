@@ -317,8 +317,16 @@ html a, body a {
   width: 100%;
   text-align: center;
   padding: none;
-  margin-left: -1.25vw;
+  margin-left: -10%;
   transition: all 800ms ease;
+}
+.kitchCab_poly_text_explore_arrow {
+  margin-top: -4.15vw;
+  margin-left: 8vw;
+  color: #2f2f31;
+  visibility: hidden;
+  text-shadow: none;
+  font-size: 3vw;
 }
 .kitchCab_poly_text_explore:hover {
   background-position: left bottom;
@@ -326,8 +334,12 @@ html a, body a {
 }
 .kitchCab_poly_text_explore:hover > ul > li {
   width: 0vw;
-  margin-left: -2.1vw;
+  margin-left: -15%;
   left: 1vw;
+}
+.kitchCab_poly_text_explore:hover > div {
+  visibility: visible;
+  transition-duration: 1000ms;
 }
 
 /*# sourceMappingURL=style.css.map */
