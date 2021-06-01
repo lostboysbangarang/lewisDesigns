@@ -41,11 +41,13 @@ $(document).ready(function(){
         if (tf2==0){
             document.getElementById("blickyR2").style.animation=document.getElementById("blickyR2").dataset.anime+" "+document.getElementById("blickyR2").dataset.time+"ms forwards ease-in";
             document.getElementById("blickyR3").style.animation=document.getElementById("blickyR3").dataset.anime+" "+document.getElementById("blickyR3").dataset.time+"ms forwards ease-in";
+            document.getElementById("text2").style.animation=document.getElementById("text2").dataset.anime+" "+document.getElementById("text2").dataset.time+"ms forwards ease-in";
             tf2=1;
         } else {
             tf2=0;
             document.getElementById("blickyR2").style.animation=document.getElementById("blickyR2").dataset.anime+"1 "+document.getElementById("blickyR2").dataset.time+"ms forwards ease-in";
             document.getElementById("blickyR3").style.animation=document.getElementById("blickyR3").dataset.anime+"1 "+document.getElementById("blickyR3").dataset.time+"ms forwards ease-in";
+            document.getElementById("text2").style.animation=document.getElementById("text2").dataset.anime+"1 "+document.getElementById("text2").dataset.time+"ms forwards ease-in";
 
         }
     }

@@ -209,6 +209,7 @@ html a, body a {
   background-color: #010A67;
   height: 22vw;
   padding-top: 0.1vw;
+  margin-top: -0.1vw;
   perspective: 1000px;
 }
 .sectionDiv_d1 {
@@ -264,6 +265,19 @@ html a, body a {
   opacity: 0;
   text-align: center;
 }
+.sectionDiv_textleft {
+  color: white;
+  z-index: 15;
+  left: 0;
+  opacity: 0;
+  font-size: 2vw;
+  margin-top: -15vw;
+  margin-left: 5vw;
+  width: 30vw;
+  transform-style: preserve-3d;
+  display: flex;
+  text-align: center;
+}
 
 .kitchCab {
   height: 37.2vw;
@@ -274,10 +288,8 @@ html a, body a {
   height: 37.55vw;
   margin-top: -37.55vw;
   padding-top: 1px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: relative;
-  background-image: url(../resources/polyL.png);
+  background-color: rgba(1, 10, 103, 0.4);
+  clip-path: polygon(0% 0%, 75% 0%, 37.5% 100%, 0% 100%);
 }
 .kitchCab_poly_text {
   color: #E8B923;
@@ -340,6 +352,16 @@ html a, body a {
 .kitchCab_poly_text_explore:hover > div {
   visibility: visible;
   transition-duration: 1000ms;
+}
+
+.bathrooms {
+  height: 37.2vw;
+  background-color: rgba(1, 10, 103, 0.4);
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 62.5% 100%);
+}
+.bathrooms_poly {
+  background-color: rgba(1, 10, 103, 0.4);
+  height: 37.2vw;
 }
 
 /*# sourceMappingURL=style.css.map */

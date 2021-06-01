@@ -1,5 +1,6 @@
 $text: #000000;
 $Azul: #010A67;
+$azul: rgba(1,10,103,.4);
 $Gold: #E8B923;
 $Grey: #2f2f31;
 
@@ -309,6 +310,7 @@ html,body {
     background-color: $Azul;
     height: 22vw;
     padding-top: .1vw;
+    margin-top: -.1vw;
     perspective: 1000px;
     &_d1 {
         // background-image: url(../resources/drawer/drawerL1.png);
@@ -376,7 +378,22 @@ html,body {
         // visibility: hidden;
         opacity: 0;
         text-align: center;
+        
     }
+    &_textleft {
+        color: white;
+        z-index: 15;
+        left: 0;
+        opacity: 0;
+        font-size: 2vw;
+        margin-top: -15vw;
+        margin-left: 5vw;
+        width: 30vw;
+        transform-style: preserve-3d;
+        display: flex;
+        text-align: center;
+    }
+    
 }
 
 .kitchCab {
@@ -389,11 +406,13 @@ html,body {
         height: 37.55vw;
         margin-top: -37.55vw;
         padding-top: 1px;
-        background-size: contain;
-        background-repeat: no-repeat;
+        // background-size: contain;
+        // background-repeat: no-repeat;
         // z-index: 100;
-        position: relative;
-        background-image: url(../resources/polyL.png);
+        // position: relative;
+        // background-image: url(../resources/polyL.png);
+        background-color: $azul;
+        clip-path: polygon(0% 0%, 75% 0%, 37.5% 100%, 0% 100%);
         // margin-left: 20vw;
         &_text {
             color: $Gold;
@@ -475,5 +494,17 @@ html,body {
                 }
             }
         }
+    }
+}
+.bathrooms {
+    height: 37.2vw;
+    background-color: $azul;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 62.5% 100%);
+    // background-image: url(../resources/polyR.png);
+    // background-size: contain;
+    // background-repeat: no-repeat;
+    &_poly {
+        background-color: $azul;
+        height: 37.2vw;
     }
 }

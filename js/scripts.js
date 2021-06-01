@@ -47,11 +47,13 @@ $(document).ready(function(){
         if (tf2==0){
             document.getElementById("blickyR2").style.animation=document.getElementById("blickyR2").dataset.anime+" "+document.getElementById("blickyR2").dataset.time+"ms forwards ease-in";
             document.getElementById("blickyR3").style.animation=document.getElementById("blickyR3").dataset.anime+" "+document.getElementById("blickyR3").dataset.time+"ms forwards ease-in";
+            document.getElementById("text2").style.animation=document.getElementById("text2").dataset.anime+" "+document.getElementById("text2").dataset.time+"ms forwards ease-in";
             tf2=1;
         } else {
             tf2=0;
             document.getElementById("blickyR2").style.animation=document.getElementById("blickyR2").dataset.anime+"1 "+document.getElementById("blickyR2").dataset.time+"ms forwards ease-in";
             document.getElementById("blickyR3").style.animation=document.getElementById("blickyR3").dataset.anime+"1 "+document.getElementById("blickyR3").dataset.time+"ms forwards ease-in";
+            document.getElementById("text2").style.animation=document.getElementById("text2").dataset.anime+"1 "+document.getElementById("text2").dataset.time+"ms forwards ease-in";
 
         }
     }
@@ -83,7 +85,7 @@ function slideShow() {
         urls[i]=window.location.origin+window.location.pathname+"/resources/"+urls[i];
         for (j=0; j<1000; j++) {
             kj=j+1;
-            url=""+urls[i]+""+kj+".png";
+            url=""+urls[i]+""+kj+".webp";
             xhr.open("HEAD",url,false);
             xhr.send();
             if (xhr.status !== 404){
