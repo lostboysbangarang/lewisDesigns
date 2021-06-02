@@ -15,8 +15,11 @@ var iii=false;
 var jjj=false;
 var lll=false;
 var kkk=false;
+var mmm=false;
+var nnn=false;
 var kitchCard=document.getElementById("kitchen");
-var bathSlide=document.getElementById("bathroom")
+var bathSlide=document.getElementById("bathroom");
+var ecSlide=document.getElementById("eC");
 var kitchPoly=document.getElementById("kitchenPoly1");
 var timeoutI;
 var timeoutII;
@@ -26,7 +29,8 @@ var timeoutV;
 
 
 urls[0]="kitchenSlide/k";
-urls[1]="bathSlide/b"
+urls[1]="bathSlide/b";
+urls[2]="ecSlide/e";
 
 
 
@@ -58,6 +62,19 @@ $(document).ready(function(){
             document.getElementById("blickyR3").style.animation=document.getElementById("blickyR3").dataset.anime+"1 "+document.getElementById("blickyR3").dataset.time+"ms forwards ease-in";
             document.getElementById("text2").style.animation=document.getElementById("text2").dataset.anime+"1 "+document.getElementById("text2").dataset.time+"ms forwards ease-in";
 
+        }
+    }
+    document.getElementById("blicky3").onclick=function() {
+        if (tf==0){
+            document.getElementById("blickyL4").style.animation=document.getElementById("blickyL4").dataset.anime+" "+document.getElementById("blickyL4").dataset.time+"ms forwards ease-in";
+            document.getElementById("blickyL5").style.animation=document.getElementById("blickyL5").dataset.anime+" "+document.getElementById("blickyL5").dataset.time+"ms forwards ease-in";
+            document.getElementById("text3").style.animation=document.getElementById("text3").dataset.anime+" "+document.getElementById("text3").dataset.time+"ms forwards ease-in";
+            tf3=1;
+        } else {
+            tf3=0;
+            document.getElementById("blickyL4").style.animation=document.getElementById("blickyL4").dataset.anime+"1 "+document.getElementById("blickyL4").dataset.time+"ms forwards ease-in";
+            document.getElementById("blickyL5").style.animation=document.getElementById("blickyL5").dataset.anime+"1 "+document.getElementById("blickyL5").dataset.time+"ms forwards ease-in";
+            document.getElementById("text3").style.animation=document.getElementById("text3").dataset.anime+"1 "+document.getElementById("text3").dataset.time+"ms forwards ease-in";
         }
     }
     
@@ -168,6 +185,10 @@ async function slideRight(urlPath, element, i) {
                 timeoutII=setTimeout(slideRight, time, urlPath, element, i);
                 actualAnimationsL(element[0].target);
             }
+            if(element[0].target==ecSlide) {
+                timeoutIII=setTimeout(slideRight, time, urlPath, element, i)
+                actualAnimations(element[0].target);
+            }
             
 
         } else {
@@ -227,7 +248,26 @@ observerII = new IntersectionObserver((entry) => {
         iii=false;
     }
 }, optsII);
+observerEC = new IntersectionObserver((entry) =>{
+    if (entry[0].target==ecSlide && nnn && !mmm) {
+        mmm=true;
+        console.log(slidePhotos);
+        slideRight(slidePhotos[2], entry, 0);
+    } else {
+        nnn=true;
+    }
+    
+}, opts);
+observerECII = new IntersectionObserver((entry) => {
+    if (nnn) {
+        window.clearTimeout(timeoutIII);
+        mmm=false;
+    }
+}, optsII);
 
+
+observerEC.observe(ecSlide);
+observerECII.observe(ecSlide);
 observerBath.observe(bathSlide);
 observerBathII.observe(bathSlide);
 observer.observe(kitchCard);

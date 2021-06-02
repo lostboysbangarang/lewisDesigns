@@ -1,5 +1,6 @@
 var tf=0;
 var tf2=0;
+var tf3=0;
 var xhr=new XMLHttpRequest();
 var urls= [];
 var slideUrl=[];
@@ -51,6 +52,7 @@ $(document).ready(function(){
 
         }
     }
+    
     
 });
 if(document.readyState==="loading"){

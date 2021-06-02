@@ -257,7 +257,7 @@ html a, body a {
 .sectionDiv_text {
   color: white;
   margin-left: 65vw;
-  margin-top: -14vw;
+  margin-top: -16vw;
   font-size: 2vw;
   transform-style: preserve-3d;
   width: 20vw;
@@ -361,7 +361,70 @@ html a, body a {
   background-color: rgba(1, 10, 103, 0.4);
   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 62.5% 100%);
   height: 37.2vw;
+  padding-top: 0.01vw;
   margin-top: -37.2vw;
+}
+.bathroom_poly_text {
+  color: #E8B923;
+  font-size: 2vw;
+  width: 21vw;
+  height: 7vw;
+  text-align: center;
+  margin-top: 7vw;
+  margin-left: 67.5vw;
+  text-shadow: 1px 1px #010A67;
+}
+.bathroom_poly_text_explore {
+  font-size: 1.5vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1vw;
+  width: 14vw;
+  height: 3vw;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #2f2f31;
+  color: #E8B923;
+  text-shadow: 1px 1px #010A67;
+  padding-top: 1vw;
+  border: 0.15vw solid #E8B923;
+  background: linear-gradient(to right, #2f2f31 27%, #E8B923 27%, #E8B923 50%, #2f2f31 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s ease-out;
+}
+.bathroom_poly_text_explore ul {
+  width: 11.9vw;
+  margin-top: -0.00001vw;
+  list-style: none;
+}
+.bathroom_poly_text_explore ul li {
+  width: 100%;
+  text-align: center;
+  padding: none;
+  margin-left: -10%;
+  transition: all 800ms ease;
+}
+.bathroom_poly_text_explore_arrow {
+  margin-top: -4.15vw;
+  margin-left: 8vw;
+  color: #2f2f31;
+  visibility: hidden;
+  text-shadow: none;
+  font-size: 3vw;
+}
+.bathroom_poly_text_explore:hover {
+  background-position: left bottom;
+  cursor: pointer;
+}
+.bathroom_poly_text_explore:hover > ul > li {
+  width: 0vw;
+  margin-left: -15%;
+  left: 1vw;
+}
+.bathroom_poly_text_explore:hover > div {
+  visibility: visible;
+  transition-duration: 1000ms;
 }
 
 /*# sourceMappingURL=style.css.map */
