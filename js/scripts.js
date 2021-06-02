@@ -13,7 +13,10 @@ var timer;
 var j;
 var iii=false;
 var jjj=false;
+var lll=false;
+var kkk=false;
 var kitchCard=document.getElementById("kitchen");
+var bathSlide=document.getElementById("bathroom")
 var kitchPoly=document.getElementById("kitchenPoly1");
 var timeoutI;
 var timeoutII;
@@ -23,7 +26,7 @@ var timeoutV;
 
 
 urls[0]="kitchenSlide/k";
-
+urls[1]="bathSlide/b"
 
 
 
@@ -66,18 +69,13 @@ if(document.readyState==="loading"){
 }
 function afterLoaded() {
     slideShow();
-    // loop();
 }
 
 
 
-// TweenLite.to(kitchCard, 0, {})
 
 
-// function loop() {
 
-//     requestAnimationFrame(loop);
-// }
 
 
 function slideShow() {
@@ -97,18 +95,11 @@ function slideShow() {
             }
         }
     }
-    for (i=0; i<urls.length; i++) {
-        mePlease=slidePhotos[i];
-        hug(mePlease, please);
-    }
-    // console.log(slidePhotos);
-    // timer=setInterval(slideRight(slidePhotos, 0), time);
 }
 function hug(you, me) {
     for (let y=0, len=you.length; y<len; y++){
         me.push(you[y]);
     }
-    // console.log("Me:     "+me);
     return me;
 }
 
@@ -117,25 +108,23 @@ function hug(you, me) {
 
 
 function actualAnimations(element){
-    // console.log("Promise Element");
-    // console.log(element);
     Promise.resolve(element)
         .then(prepareAnime)
         .then(playAnime);
     
 }
-// function actualAnimations2(){
-//     Promise.resolve(kitchPoly)
-//         .then(prepareAnime)
-//         .then(playAnime2);
-// }
+function actualAnimationsL(element){
+    Promise.resolve(element)
+        .then(prepareAnime)
+        .then(playAnime2)
+}
 var anime ={
     slideR: (element, done)=>{
         TweenMax.set(element, {autoAlpha: 0, translateX: "50vw"});
         TweenMax.to(element, 1, {autoAlpha: 1, translateX:"0vw"});
     },
     slideL: (element, done)=>{
-        TweenMax.set(element, {autoAlpha: 0, translateX: "-100vw"});
+        TweenMax.set(element, {autoAlpha: 0, translateX: "-50vw"});
         TweenMax.to(element, 1, {autoAlpha: 1, translateX:"0vw"});
     }
 }
@@ -143,21 +132,14 @@ function animate(element, animation){
     return new Promise(resolve => animation(element, resolve));
 }
 async function playAnime(element){
-    // console.log("Play");
-    // console.log(element);
     await animate(element, anime.slideR);
 }
 async function playAnime2(element){
-    console.log("Play");
+    // console.log("Play");
     await animate(element, anime.slideL);
 }
 function prepareAnime(element){
-    // console.log("Prepare");
-    // console.log(element);
-    // console.log(element);
-    // console.log(element.style);
     TweenMax.to(element, {clearProps: "animation"});
-    // console.log(element.style);
     return element;
 }
 
@@ -165,43 +147,33 @@ function prepareAnime(element){
 
 
 async function slideRight(urlPath, element, i) {
-    // console.log("\t\t\tSlide Start");
-    // console.log("\tI:\t\t"+i);
-    if (iii) {
-        const lgnth=urlPath[0].length-1;
+    if (iii || kkk) {
+        const lgnth=urlPath.length-1;
         if (i==lgnth) {
-            // console.log("URL path length:     "+urlPath);
             i=0;
         }
-        if (typeof urlPath[0][i] != "undefined") {
-            // console.log("Help me:     ");
-            // console.log(element[0]);
-            element[0].target.style.backgroundImage="url("+urlPath[0][i]+")";
-            // element.style.animation="slideRight "+time*.05+"ms ease-out forwards";
+        if (typeof urlPath[i] != "undefined") {
+            // console.log(element[0])
+            element[0].target.style.backgroundImage="url("+urlPath[i]+")";
         }
-        // console.log("URL Path:\t\t"+urlPath[0][i]);
-        // console.log("URL length:\t\t"+urlPath[0].length);
-        // console.log("URL Index:\t\t"+lgnth);
-        if (i<urlPath[0].length) {
-            // console.log("Prev I:\t\t"+i);
+        if (i<urlPath.length) {
             i++;
-            // console.log("New I:\t\t"+i);
-        //     i=i+1;
-            timeoutI=setTimeout(slideRight, time, urlPath, element, i);
-            actualAnimations(element[0].target);
+            if (element[0].target==kitchCard){
+                timeoutI=setTimeout(slideRight, time, urlPath, element, i);
+                actualAnimations(element[0].target);
+            }
+            if (element[0].target==bathSlide) {
+                // console.log("Missile missed")
+                // console.log(element[0].target)
+                timeoutII=setTimeout(slideRight, time, urlPath, element, i);
+                actualAnimationsL(element[0].target);
+            }
+            
 
         } else {
-            // i=0;
         }
-        // } else {
-        //     i=0;
-        //     slideRight(urlPath, i);
-        // }
-        // actualAnimations(element);
-        // actualAnimations(element);
     }
     
-    // actualAnimations2();
 }
 
 
@@ -222,27 +194,41 @@ const optsII={
     threshold: 0,
     rootMargin: "0%"
 }
+observerBath = new IntersectionObserver((entry) =>{
+    
+    if (entry[0].target==bathSlide && lll && !kkk) {
+        kkk=true;
+        // console.log("\t\tMarking Target");
+        // console.log(slidePhotos[1]);
+        slideRight(slidePhotos[1], entry, 0);
+    } else {
+        lll=true;
+    }
+    
+}, opts);
+observerBathII = new IntersectionObserver((entry) => {
+    if (jjj) {
+        window.clearTimeout(timeoutII);
+        kkk=false;
+    }
+}, optsII);
 observer = new IntersectionObserver((entry) =>{
     if (entry[0].target==kitchCard && jjj && !iii) {
-        // console.log("\t\tMarking target Alpha");
         iii=true;
-        slideRight(slidePhotos, entry, 0);
+        slideRight(slidePhotos[0], entry, 0);
     } else {
         jjj=true;
     }
-    // console.log("\t\Finding target Alpha");
-    // console.log(entry[0].target);
-    // window.clearTimeout(timeoutI);
-    // iii=true;
     
-    // timeoutI=slideRight(slidePhotos, entry, 0)
 }, opts);
 observerII = new IntersectionObserver((entry) => {
     if (jjj) {
-        // console.log("I IntObv:\t\t"+i);
         window.clearTimeout(timeoutI);
         iii=false;
     }
 }, optsII);
+
+observerBath.observe(bathSlide);
+observerBathII.observe(bathSlide);
 observer.observe(kitchCard);
 observerII.observe(kitchCard);

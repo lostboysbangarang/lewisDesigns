@@ -496,15 +496,17 @@ html,body {
         }
     }
 }
-.bathrooms {
+.bathroom {
     height: 37.2vw;
-    background-color: $azul;
-    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 62.5% 100%);
+    // background-color: $azul;
+    
     // background-image: url(../resources/polyR.png);
     // background-size: contain;
     // background-repeat: no-repeat;
     &_poly {
         background-color: $azul;
+        clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 62.5% 100%);
         height: 37.2vw;
+        margin-top: -37.2vw;
     }
 }
