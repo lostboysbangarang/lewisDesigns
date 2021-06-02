@@ -6,7 +6,7 @@ var slideUrl=[];
 var slidePhotos=[];
 var mePlease=[];
 var please=[];
-var time=6000;
+var time=5000;
 var $time=5;
 var $timeFade=$time*.25;
 var timer;
@@ -164,7 +164,7 @@ function prepareAnime(element){
 
 
 async function slideRight(urlPath, element, i) {
-    if (iii || kkk) {
+    if (iii || kkk || mmm) {
         const lgnth=urlPath.length-1;
         if (i==lgnth) {
             i=0;
@@ -186,7 +186,9 @@ async function slideRight(urlPath, element, i) {
                 actualAnimationsL(element[0].target);
             }
             if(element[0].target==ecSlide) {
-                timeoutIII=setTimeout(slideRight, time, urlPath, element, i)
+                console.log("work plz");
+                console.log("\t\tI:\t\t\t"+i);
+                timeoutIII=setTimeout(slideRight, time, urlPath, element, i);
                 actualAnimations(element[0].target);
             }
             
@@ -244,6 +246,7 @@ observer = new IntersectionObserver((entry) =>{
 }, opts);
 observerII = new IntersectionObserver((entry) => {
     if (jjj) {
+        // console.log("\t\t\t!!!\t\tCLEAR\t\t!!!")
         window.clearTimeout(timeoutI);
         iii=false;
     }
@@ -251,7 +254,8 @@ observerII = new IntersectionObserver((entry) => {
 observerEC = new IntersectionObserver((entry) =>{
     if (entry[0].target==ecSlide && nnn && !mmm) {
         mmm=true;
-        console.log(slidePhotos);
+        console.log(slidePhotos[2]);
+        console.log(slideRight);
         slideRight(slidePhotos[2], entry, 0);
     } else {
         nnn=true;
@@ -260,6 +264,7 @@ observerEC = new IntersectionObserver((entry) =>{
 }, opts);
 observerECII = new IntersectionObserver((entry) => {
     if (nnn) {
+        // console.log("\t\t\t!!!\t\tCLEAR\t\t!!!")
         window.clearTimeout(timeoutIII);
         mmm=false;
     }

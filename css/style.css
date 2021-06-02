@@ -283,6 +283,7 @@ html a, body a {
   height: 37.2vw;
   background-size: contain;
   background-repeat: no-repeat;
+  width: 100vw;
 }
 .kitchCab_poly {
   height: 37.55vw;
@@ -315,7 +316,7 @@ html a, body a {
   text-shadow: 1px 1px #010A67;
   padding-top: 1vw;
   border: 0.15vw solid #E8B923;
-  background: linear-gradient(to right, #2f2f31 27%, #E8B923 27%, #E8B923 50%, #2f2f31 50%);
+  background: linear-gradient(to right, #2f2f31 30%, #E8B923 30%, #E8B923 50%, #2f2f31 50%);
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all 0.5s ease-out;
@@ -356,6 +357,8 @@ html a, body a {
 
 .bathroom {
   height: 37.2vw;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .bathroom_poly {
   background-color: rgba(1, 10, 103, 0.4);
@@ -388,7 +391,7 @@ html a, body a {
   text-shadow: 1px 1px #010A67;
   padding-top: 1vw;
   border: 0.15vw solid #E8B923;
-  background: linear-gradient(to right, #2f2f31 27%, #E8B923 27%, #E8B923 50%, #2f2f31 50%);
+  background: linear-gradient(to right, #2f2f31 30%, #E8B923 30%, #E8B923 50%, #2f2f31 50%);
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all 0.5s ease-out;

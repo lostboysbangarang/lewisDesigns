@@ -402,6 +402,7 @@ html,body {
     background-repeat: no-repeat;
     // position: relative;
     // z-index: -100;
+    width: 100vw;
     &_poly{
         height: 37.55vw;
         margin-top: -37.55vw;
@@ -449,7 +450,7 @@ html,body {
                 // &:hover {
                 //     cursor: pointer;
                 // }
-                background: linear-gradient(to right, $Grey 27%, $Gold 27%, $Gold 50%, $Grey 50%);
+                background: linear-gradient(to right, $Grey 30%, $Gold 30%, $Gold 50%, $Grey 50%);
                 background-size: 200% 100%;
                 background-position: right bottom;
                 transition: all .5s ease-out;
@@ -498,7 +499,8 @@ html,body {
 }
 .bathroom {
     height: 37.2vw;
-    
+    background-size: contain;
+    background-repeat: no-repeat;
     &_poly {
         background-color: $azul;
         clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 62.5% 100%);
@@ -536,7 +538,7 @@ html,body {
                 // &:hover {
                 //     cursor: pointer;
                 // }
-                background: linear-gradient(to right, $Grey 27%, $Gold 27%, $Gold 50%, $Grey 50%);
+                background: linear-gradient(to right, $Grey 30%, $Gold 30%, $Gold 50%, $Grey 50%);
                 background-size: 200% 100%;
                 background-position: right bottom;
                 transition: all .5s ease-out;
