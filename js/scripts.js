@@ -1,5 +1,8 @@
 var tf=0;
 var tf2=0;
+var tf3=0;
+var tf4=0;
+var tf5=0;
 var xhr=new XMLHttpRequest();
 var urls= [];
 var slideUrl=[];
@@ -17,9 +20,12 @@ var lll=false;
 var kkk=false;
 var mmm=false;
 var nnn=false;
+var ooo=false;
+var ppp=false;
 var kitchCard=document.getElementById("kitchen");
 var bathSlide=document.getElementById("bathroom");
 var ecSlide=document.getElementById("eC");
+var archSlide=document.getElementById("arch");
 var kitchPoly=document.getElementById("kitchenPoly1");
 var timeoutI;
 var timeoutII;
@@ -31,6 +37,7 @@ var timeoutV;
 urls[0]="kitchenSlide/k";
 urls[1]="bathSlide/b";
 urls[2]="ecSlide/e";
+urls[3]="archSlide/a"
 
 
 
@@ -65,7 +72,7 @@ $(document).ready(function(){
         }
     }
     document.getElementById("blicky3").onclick=function() {
-        if (tf==0){
+        if (tf3==0){
             document.getElementById("blickyL4").style.animation=document.getElementById("blickyL4").dataset.anime+" "+document.getElementById("blickyL4").dataset.time+"ms forwards ease-in";
             document.getElementById("blickyL5").style.animation=document.getElementById("blickyL5").dataset.anime+" "+document.getElementById("blickyL5").dataset.time+"ms forwards ease-in";
             document.getElementById("text3").style.animation=document.getElementById("text3").dataset.anime+" "+document.getElementById("text3").dataset.time+"ms forwards ease-in";
@@ -75,6 +82,32 @@ $(document).ready(function(){
             document.getElementById("blickyL4").style.animation=document.getElementById("blickyL4").dataset.anime+"1 "+document.getElementById("blickyL4").dataset.time+"ms forwards ease-in";
             document.getElementById("blickyL5").style.animation=document.getElementById("blickyL5").dataset.anime+"1 "+document.getElementById("blickyL5").dataset.time+"ms forwards ease-in";
             document.getElementById("text3").style.animation=document.getElementById("text3").dataset.anime+"1 "+document.getElementById("text3").dataset.time+"ms forwards ease-in";
+        }
+    }
+    document.getElementById("blicky4").onclick=function() {
+        if (tf4==0){
+            document.getElementById("blickyR4").style.animation=document.getElementById("blickyR4").dataset.anime+" "+document.getElementById("blickyR4").dataset.time+"ms forwards ease-in";
+            document.getElementById("blickyR5").style.animation=document.getElementById("blickyR5").dataset.anime+" "+document.getElementById("blickyR5").dataset.time+"ms forwards ease-in";
+            document.getElementById("text4").style.animation=document.getElementById("text4").dataset.anime+" "+document.getElementById("text4").dataset.time+"ms forwards ease-in";
+            tf4=1;
+        } else {
+            tf4=0;
+            document.getElementById("blickyR4").style.animation=document.getElementById("blickyR4").dataset.anime+"1 "+document.getElementById("blickyR4").dataset.time+"ms forwards ease-in";
+            document.getElementById("blickyR5").style.animation=document.getElementById("blickyR5").dataset.anime+"1 "+document.getElementById("blickyR5").dataset.time+"ms forwards ease-in";
+            document.getElementById("text4").style.animation=document.getElementById("text4").dataset.anime+"1 "+document.getElementById("text4").dataset.time+"ms forwards ease-in";
+        }
+    }
+    document.getElementById("blicky5").onclick=function() {
+        if (tf3==0){
+            document.getElementById("blickyL6").style.animation=document.getElementById("blickyL6").dataset.anime+" "+document.getElementById("blickyL6").dataset.time+"ms forwards ease-in";
+            document.getElementById("blickyL7").style.animation=document.getElementById("blickyL7").dataset.anime+" "+document.getElementById("blickyL7").dataset.time+"ms forwards ease-in";
+            document.getElementById("text5").style.animation=document.getElementById("text5").dataset.anime+" "+document.getElementById("text5").dataset.time+"ms forwards ease-in";
+            tf3=1;
+        } else {
+            tf3=0;
+            document.getElementById("blickyL6").style.animation=document.getElementById("blickyL6").dataset.anime+"1 "+document.getElementById("blickyL6").dataset.time+"ms forwards ease-in";
+            document.getElementById("blickyL7").style.animation=document.getElementById("blickyL7").dataset.anime+"1 "+document.getElementById("blickyL7").dataset.time+"ms forwards ease-in";
+            document.getElementById("text5").style.animation=document.getElementById("text5").dataset.anime+"1 "+document.getElementById("text5").dataset.time+"ms forwards ease-in";
         }
     }
     
@@ -164,7 +197,7 @@ function prepareAnime(element){
 
 
 async function slideRight(urlPath, element, i) {
-    if (iii || kkk || mmm) {
+    if (iii || kkk || mmm || ooo) {
         const lgnth=urlPath.length-1;
         if (i==lgnth) {
             i=0;
@@ -186,10 +219,14 @@ async function slideRight(urlPath, element, i) {
                 actualAnimationsL(element[0].target);
             }
             if(element[0].target==ecSlide) {
-                console.log("work plz");
-                console.log("\t\tI:\t\t\t"+i);
+                // console.log("work plz");
+                // console.log("\t\tI:\t\t\t"+i);
                 timeoutIII=setTimeout(slideRight, time, urlPath, element, i);
                 actualAnimations(element[0].target);
+            }
+            if(element[0].target==archSlide) {
+                timeoutIV=setTimeout(slideRight, time, urlPath, element, i);
+                actualAnimationsL(element[0].target);
             }
             
 
@@ -254,8 +291,8 @@ observerII = new IntersectionObserver((entry) => {
 observerEC = new IntersectionObserver((entry) =>{
     if (entry[0].target==ecSlide && nnn && !mmm) {
         mmm=true;
-        console.log(slidePhotos[2]);
-        console.log(slideRight);
+        // console.log(slidePhotos[2]);
+        // console.log(slideRight);
         slideRight(slidePhotos[2], entry, 0);
     } else {
         nnn=true;
@@ -269,8 +306,27 @@ observerECII = new IntersectionObserver((entry) => {
         mmm=false;
     }
 }, optsII);
+observerArch = new IntersectionObserver((entry) =>{
+    if (entry[0].target==archSlide && ooo && !ppp) {
+        ppp=true;
+        // console.log(slidePhotos[3]);
+        // console.log(slideRight);
+        slideRight(slidePhotos[3], entry, 0);
+    } else {
+        ooo=true;
+    }
+    
+}, opts);
+observerArchII = new IntersectionObserver((entry) => {
+    if (nnn) {
+        // console.log("\t\t\t!!!\t\tCLEAR\t\t!!!")
+        window.clearTimeout(timeoutIII);
+        mmm=false;
+    }
+}, optsII);
 
-
+observerArch.observe(archSlide);
+observerArchII.observe(archSlide);
 observerEC.observe(ecSlide);
 observerECII.observe(ecSlide);
 observerBath.observe(bathSlide);
