@@ -247,13 +247,52 @@ html,body {
         }
     }
     &_icky {
-        
-        & ul{ 
-            list-style-type: none;
+        flex-basis: 75vw;
+        // & ul{ 
+        //     list-style-type: none;
+        //     display: flex;
+        //     justify-content: space-around;
+        //     & li {
+        //         margin-right: 5vw;
+        //     }
+        // }
+        // background-color: $Azul;
+        vertical-align: top;
+        // display: flex;
+        // justify-content: space-between;
+        &_list {
+            // background-color: white;
             display: flex;
+            flex-direction: row;
             justify-content: space-around;
-            & li {
-                margin-right: 5vw;
+
+            & .drop {
+                display: none;
+                margin-top: 5vw;
+                list-style-type: none;
+                & li {
+                    
+                }
+                
+                // display: block;
+                // height: 15vw;
+                
+            }
+            & .main {
+                list-style-type: none;
+                // background-color: white;
+                width: 5vw;
+                height: 60px;
+                align-items: center;
+                &:hover {
+                    background-color: whitesmoke;
+                    border-radius: .5vw;
+                }
+                &:hover > ul {
+                    display: block;
+                    position: absolute;
+                }
+                // margin-right: 15vw;
             }
         }
     }

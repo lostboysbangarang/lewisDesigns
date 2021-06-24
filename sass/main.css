@@ -381,17 +381,47 @@ html a, body a {
   height: 75px;
 }
 
-.sticky_icky ul {
-  list-style-type: none;
+.sticky_icky {
+  -ms-flex-preferred-size: 75vw;
+      flex-basis: 75vw;
+  vertical-align: top;
+}
+
+.sticky_icky_list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
 
-.sticky_icky ul li {
-  margin-right: 5vw;
+.sticky_icky_list .drop {
+  display: none;
+  margin-top: 5vw;
+  list-style-type: none;
+}
+
+.sticky_icky_list .main {
+  list-style-type: none;
+  width: 5vw;
+  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sticky_icky_list .main:hover {
+  background-color: whitesmoke;
+  border-radius: .5vw;
+}
+
+.sticky_icky_list .main:hover > ul {
+  display: block;
+  position: absolute;
 }
 
 .intro {
