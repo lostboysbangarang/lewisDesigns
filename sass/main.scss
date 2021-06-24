@@ -585,3 +585,19 @@ html,body {
         }
     }
 }
+.foot {
+    height: 15vw;
+    background-color: $Grey;
+    // margin-top: -1vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    &_sect{
+        
+        height: 15vw;
+        width: 66.66666667vw;
+        // max-width: 1vw;
+        background-color: white;
+        border-radius: 1px red;
+    }
+}
