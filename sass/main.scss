@@ -592,12 +592,63 @@ html,body {
     overflow: hidden;
     display: flex;
     justify-content: center;
+    color: $Gold;
     &_sect{
-        
+        display: flex;
         height: 15vw;
         width: 66.66666667vw;
         // max-width: 1vw;
-        background-color: white;
-        border-radius: 1px red;
+        // background-color: white;
+        // border-radius: 1px red;
+        justify-content: space-between;
+        font-size: 1.5vw;
+        line-height: 3vw;
+        &_1 {
+            // border-radius: 3px 3px 3px 3px red;
+            // background-color: blue;
+            width: 29.1666666666vw;
+            height: 9vw;
+            margin-top: 3vw;
+            overflow: hidden;
+            & i {
+                font-size: 1.5vw;
+            }
+            &_ugh {
+                line-height: 1.25vw;
+                display: flex;
+                &_map {
+                    margin-top: .5vw;
+                    margin-right: 2vw;
+                    // position: absolute;
+                }
+            }
+            &_telly {
+                display: flex;
+
+                & i {
+                    margin-top: .8vw;
+                    margin-right: 2vw;
+                }
+            }
+            
+        }
+        &_2{
+            width: 29.1666666666vw;
+            height: 9vw;
+            margin-top: 3vw;
+            // background-color: blueviolet;
+            display: flex;
+            flex-direction: column;
+            &_text {
+                flex-basis: 1vw;
+                // background-color: brown;
+            }
+            & .fa-twitter {
+                margin-left: 3vw;
+            }
+            & .fab {
+                margin-right: 1vw;
+            }
+        }
     }
 }
