@@ -240,6 +240,7 @@ html,body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: top;
     &_logo {
         & img {
             margin-left: 10vw;
@@ -266,33 +267,49 @@ html,body {
             flex-direction: row;
             justify-content: space-around;
 
-            & .drop {
-                display: none;
-                margin-top: 5vw;
-                list-style-type: none;
-                & li {
-                    
-                }
-                
-                // display: block;
-                // height: 15vw;
-                
-            }
+            
             & .main {
                 list-style-type: none;
                 // background-color: white;
-                width: 5vw;
+                width: 9vw;
                 height: 60px;
                 align-items: center;
                 &:hover {
                     background-color: whitesmoke;
-                    border-radius: .5vw;
+                    border-radius: .5vw .5vw 0vw 0vw;
                 }
                 &:hover > ul {
                     display: block;
                     position: absolute;
+                    background-color: whitesmoke;
+                }
+                & li {
+                    height: 3vw;
+                    text-align: start;
                 }
                 // margin-right: 15vw;
+                & .drop {
+                    display: none;
+                    // background-color: whitesmoke;
+                    // margin-top: 5vw;
+                    list-style-type: none;
+                    width: 6vw;
+                    padding-right: 1vw;
+                    &_1 {
+                        margin-top: 9vw;
+                        border-radius: .5vw;
+                    }
+                    &_2 {
+                        margin-top: 18vw;
+                    }
+                    & li {
+                        
+                    }
+                    
+                    // display: block;
+                    // height: 15vw;
+                    
+                }
             }
         }
     }
