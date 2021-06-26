@@ -1,3 +1,4 @@
+@use "sass:math";
 @-webkit-keyframes left2 {
   0% {
   }
@@ -6,7 +7,6 @@
             transform: translateX(-22vw);
   }
 }
-
 @keyframes left2 {
   0% {
   }
@@ -342,6 +342,52 @@
   }
 }
 
+@-webkit-keyframes anime {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-3.125vw);
+            transform: translateY(-3.125vw);
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+  }
+  80% {
+    -webkit-transform: translateY(0.52083vw);
+            transform: translateY(0.52083vw);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: translateY(0vw);
+            transform: translateY(0vw);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes anime {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-3.125vw);
+            transform: translateY(-3.125vw);
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+  }
+  80% {
+    -webkit-transform: translateY(0.52083vw);
+            transform: translateY(0.52083vw);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: translateY(0vw);
+            transform: translateY(0vw);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
 html, body {
   width: 100%;
   height: 100%;
@@ -381,9 +427,37 @@ html a, body a {
   background-color: white;
 }
 
-.sticky_logo img {
-  margin-left: 10vw;
-  height: 75px;
+.sticky_logo {
+  -ms-flex-preferred-size: 25vw;
+      flex-basis: 25vw;
+  margin-left: 1vw;
+}
+
+.sticky_logo h1 {
+  font-family: dual300;
+  font-size: 2vw;
+  font-weight: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: 0vw;
+  margin-top: 3vw;
+}
+
+.sticky_logo h2 {
+  font-family: allura;
+  font-size: 2vw;
+  font-weight: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: 1vw;
 }
 
 .sticky_icky {
@@ -404,7 +478,10 @@ html a, body a {
       justify-content: space-around;
 }
 
-.sticky_icky_list .main {
+.sticky_icky_list .aS {
+  position: absolute;
+  left: 27.74vw;
+  top: 0.35vw;
   list-style-type: none;
   width: 9vw;
   height: 60px;
@@ -413,29 +490,73 @@ html a, body a {
           align-items: center;
 }
 
-.sticky_icky_list .main:hover {
+.sticky_icky_list .aS:hover {
   background-color: whitesmoke;
   border-radius: .5vw;
 }
 
-.sticky_icky_list .main:hover > ul {
+.sticky_icky_list .aS:hover:nth-child(1) {
+  padding-bottom: 1.125vw;
+}
+
+.sticky_icky_list .aS:hover:nth-child(2) {
+  padding-bottom: 1.125vw;
+}
+
+.sticky_icky_list .aS:hover > ul {
   display: block;
   position: absolute;
-  background-color: whitesmoke;
-  border: 1px solid blue;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  padding: 0vw;
+  width: 9vw;
 }
 
-.sticky_icky_list .main:hover > ul > li:nth-child(1) {
+.sticky_icky_list .aS:hover > ul > li:nth-child(1) {
   margin-top: 1vw;
-  border: 1px solid red;
 }
 
-.sticky_icky_list .main li {
+.sticky_icky_list .aS:hover > ul > li {
+  opacity: 0;
+  padding-left: 1vw;
+}
+
+.sticky_icky_list .aS:hover > ul > li:nth-child(1) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out -150ms forwards;
+          animation: anime 300ms ease-in-out -150ms forwards;
+}
+
+.sticky_icky_list .aS:hover > ul > li:nth-child(2) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 0ms forwards;
+          animation: anime 300ms ease-in-out 0ms forwards;
+}
+
+.sticky_icky_list .aS:hover > ul > li:nth-child(3) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 150ms forwards;
+          animation: anime 300ms ease-in-out 150ms forwards;
+}
+
+.sticky_icky_list .aS:hover > ul > li:nth-child(4) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 300ms forwards;
+          animation: anime 300ms ease-in-out 300ms forwards;
+}
+
+.sticky_icky_list .aS:hover > ul > li:nth-child(5) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 450ms forwards;
+          animation: anime 300ms ease-in-out 450ms forwards;
+}
+
+.sticky_icky_list .aS li {
   height: 3vw;
   text-align: start;
 }
 
-.sticky_icky_list .main .drop {
+.sticky_icky_list .aS .drop {
   display: none;
   list-style-type: none;
   width: 6vw;
@@ -443,11 +564,575 @@ html a, body a {
   border-radius: .5vw;
 }
 
-.sticky_icky_list .main .drop_1 {
+.sticky_icky_list .aS .drop_1 {
   margin-top: 9vw;
 }
 
-.sticky_icky_list .main .drop_2 {
+.sticky_icky_list .aS .drop_2 {
+  margin-top: 18vw;
+}
+
+.sticky_icky_list .g {
+  position: absolute;
+  left: 38.16vw;
+  top: 0.35vw;
+  list-style-type: none;
+  width: 9vw;
+  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sticky_icky_list .g:hover {
+  background-color: whitesmoke;
+  border-radius: .5vw;
+}
+
+.sticky_icky_list .g:hover:nth-child(1) {
+  padding-bottom: 1.125vw;
+}
+
+.sticky_icky_list .g:hover:nth-child(2) {
+  padding-bottom: 1.125vw;
+}
+
+.sticky_icky_list .g:hover > ul {
+  display: block;
+  position: absolute;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  padding: 0vw;
+  width: 9vw;
+}
+
+.sticky_icky_list .g:hover > ul > li:nth-child(1) {
+  margin-top: 1vw;
+}
+
+.sticky_icky_list .g:hover > ul > li {
+  opacity: 0;
+  padding-left: 1vw;
+}
+
+.sticky_icky_list .g:hover > ul > li:nth-child(1) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out -150ms forwards;
+          animation: anime 300ms ease-in-out -150ms forwards;
+}
+
+.sticky_icky_list .g:hover > ul > li:nth-child(2) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 0ms forwards;
+          animation: anime 300ms ease-in-out 0ms forwards;
+}
+
+.sticky_icky_list .g:hover > ul > li:nth-child(3) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 150ms forwards;
+          animation: anime 300ms ease-in-out 150ms forwards;
+}
+
+.sticky_icky_list .g:hover > ul > li:nth-child(4) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 300ms forwards;
+          animation: anime 300ms ease-in-out 300ms forwards;
+}
+
+.sticky_icky_list .g:hover > ul > li:nth-child(5) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 450ms forwards;
+          animation: anime 300ms ease-in-out 450ms forwards;
+}
+
+.sticky_icky_list .g li {
+  height: 3vw;
+  text-align: start;
+}
+
+.sticky_icky_list .g .drop {
+  display: none;
+  list-style-type: none;
+  width: 6vw;
+  padding-right: 1vw;
+  border-radius: .5vw;
+}
+
+.sticky_icky_list .g .drop_1 {
+  margin-top: 9vw;
+}
+
+.sticky_icky_list .g .drop_2 {
+  margin-top: 18vw;
+}
+
+.sticky_icky_list .pB {
+  position: absolute;
+  left: 48.57vw;
+  top: 0.35vw;
+  list-style-type: none;
+  width: 9vw;
+  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sticky_icky_list .pB:hover {
+  background-color: whitesmoke;
+  border-radius: .5vw;
+}
+
+.sticky_icky_list .pB:hover:nth-child(1) {
+  padding-bottom: 1.125vw;
+}
+
+.sticky_icky_list .pB:hover:nth-child(2) {
+  padding-bottom: 1.125vw;
+}
+
+.sticky_icky_list .pB:hover > ul {
+  display: block;
+  position: absolute;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  padding: 0vw;
+  width: 9vw;
+}
+
+.sticky_icky_list .pB:hover > ul > li:nth-child(1) {
+  margin-top: 1vw;
+}
+
+.sticky_icky_list .pB:hover > ul > li {
+  opacity: 0;
+  padding-left: 1vw;
+}
+
+.sticky_icky_list .pB:hover > ul > li:nth-child(1) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out -150ms forwards;
+          animation: anime 300ms ease-in-out -150ms forwards;
+}
+
+.sticky_icky_list .pB:hover > ul > li:nth-child(2) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 0ms forwards;
+          animation: anime 300ms ease-in-out 0ms forwards;
+}
+
+.sticky_icky_list .pB:hover > ul > li:nth-child(3) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 150ms forwards;
+          animation: anime 300ms ease-in-out 150ms forwards;
+}
+
+.sticky_icky_list .pB:hover > ul > li:nth-child(4) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 300ms forwards;
+          animation: anime 300ms ease-in-out 300ms forwards;
+}
+
+.sticky_icky_list .pB:hover > ul > li:nth-child(5) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 450ms forwards;
+          animation: anime 300ms ease-in-out 450ms forwards;
+}
+
+.sticky_icky_list .pB li {
+  height: 3vw;
+  text-align: start;
+}
+
+.sticky_icky_list .pB .drop {
+  display: none;
+  list-style-type: none;
+  width: 6vw;
+  padding-right: 1vw;
+  border-radius: .5vw;
+}
+
+.sticky_icky_list .pB .drop_1 {
+  margin-top: 9vw;
+}
+
+.sticky_icky_list .pB .drop_2 {
+  margin-top: 18vw;
+}
+
+.sticky_icky_list .p {
+  position: absolute;
+  left: 58.99vw;
+  top: 0.35vw;
+  list-style-type: none;
+  width: 9vw;
+  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sticky_icky_list .p:hover {
+  background-color: whitesmoke;
+  border-radius: .5vw;
+}
+
+.sticky_icky_list .p:hover:nth-child(1) {
+  padding-bottom: 1.125vw;
+}
+
+.sticky_icky_list .p:hover:nth-child(2) {
+  padding-bottom: 1.125vw;
+}
+
+.sticky_icky_list .p:hover > ul {
+  display: block;
+  position: absolute;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  padding: 0vw;
+  width: 9vw;
+}
+
+.sticky_icky_list .p:hover > ul > li:nth-child(1) {
+  margin-top: 1vw;
+}
+
+.sticky_icky_list .p:hover > ul > li {
+  opacity: 0;
+  padding-left: 1vw;
+}
+
+.sticky_icky_list .p:hover > ul > li:nth-child(1) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out -150ms forwards;
+          animation: anime 300ms ease-in-out -150ms forwards;
+}
+
+.sticky_icky_list .p:hover > ul > li:nth-child(2) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 0ms forwards;
+          animation: anime 300ms ease-in-out 0ms forwards;
+}
+
+.sticky_icky_list .p:hover > ul > li:nth-child(3) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 150ms forwards;
+          animation: anime 300ms ease-in-out 150ms forwards;
+}
+
+.sticky_icky_list .p:hover > ul > li:nth-child(4) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 300ms forwards;
+          animation: anime 300ms ease-in-out 300ms forwards;
+}
+
+.sticky_icky_list .p:hover > ul > li:nth-child(5) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 450ms forwards;
+          animation: anime 300ms ease-in-out 450ms forwards;
+}
+
+.sticky_icky_list .p li {
+  height: 3vw;
+  text-align: start;
+}
+
+.sticky_icky_list .p .drop {
+  display: none;
+  list-style-type: none;
+  width: 6vw;
+  padding-right: 1vw;
+  border-radius: .5vw;
+}
+
+.sticky_icky_list .p .drop_1 {
+  margin-top: 9vw;
+}
+
+.sticky_icky_list .p .drop_2 {
+  margin-top: 18vw;
+}
+
+.sticky_icky_list .m {
+  position: absolute;
+  left: 69.41vw;
+  top: 0.35vw;
+  list-style-type: none;
+  width: 9vw;
+  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sticky_icky_list .m:hover {
+  background-color: whitesmoke;
+  border-radius: .5vw;
+}
+
+.sticky_icky_list .m:hover:nth-child(1) {
+  padding-bottom: 1.125vw;
+}
+
+.sticky_icky_list .m:hover:nth-child(2) {
+  padding-bottom: 1.125vw;
+}
+
+.sticky_icky_list .m:hover > ul {
+  display: block;
+  position: absolute;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  padding: 0vw;
+  width: 9vw;
+}
+
+.sticky_icky_list .m:hover > ul > li:nth-child(1) {
+  margin-top: 1vw;
+}
+
+.sticky_icky_list .m:hover > ul > li {
+  opacity: 0;
+  padding-left: 1vw;
+}
+
+.sticky_icky_list .m:hover > ul > li:nth-child(1) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out -150ms forwards;
+          animation: anime 300ms ease-in-out -150ms forwards;
+}
+
+.sticky_icky_list .m:hover > ul > li:nth-child(2) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 0ms forwards;
+          animation: anime 300ms ease-in-out 0ms forwards;
+}
+
+.sticky_icky_list .m:hover > ul > li:nth-child(3) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 150ms forwards;
+          animation: anime 300ms ease-in-out 150ms forwards;
+}
+
+.sticky_icky_list .m:hover > ul > li:nth-child(4) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 300ms forwards;
+          animation: anime 300ms ease-in-out 300ms forwards;
+}
+
+.sticky_icky_list .m:hover > ul > li:nth-child(5) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 450ms forwards;
+          animation: anime 300ms ease-in-out 450ms forwards;
+}
+
+.sticky_icky_list .m li {
+  height: 3vw;
+  text-align: start;
+}
+
+.sticky_icky_list .m .drop {
+  display: none;
+  list-style-type: none;
+  width: 6vw;
+  padding-right: 1vw;
+  border-radius: .5vw;
+}
+
+.sticky_icky_list .m .drop_1 {
+  margin-top: 9vw;
+}
+
+.sticky_icky_list .m .drop_2 {
+  margin-top: 18vw;
+}
+
+.sticky_icky_list .b {
+  position: absolute;
+  left: 79.82vw;
+  top: 0.35vw;
+  list-style-type: none;
+  width: 9vw;
+  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sticky_icky_list .b:hover {
+  background-color: whitesmoke;
+  border-radius: .5vw;
+}
+
+.sticky_icky_list .b:hover:nth-child(1) {
+  padding-bottom: 1.125vw;
+}
+
+.sticky_icky_list .b:hover:nth-child(2) {
+  padding-bottom: 1.125vw;
+}
+
+.sticky_icky_list .b:hover > ul {
+  display: block;
+  position: absolute;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  padding: 0vw;
+  width: 9vw;
+}
+
+.sticky_icky_list .b:hover > ul > li:nth-child(1) {
+  margin-top: 1vw;
+}
+
+.sticky_icky_list .b:hover > ul > li {
+  opacity: 0;
+  padding-left: 1vw;
+}
+
+.sticky_icky_list .b:hover > ul > li:nth-child(1) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out -150ms forwards;
+          animation: anime 300ms ease-in-out -150ms forwards;
+}
+
+.sticky_icky_list .b:hover > ul > li:nth-child(2) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 0ms forwards;
+          animation: anime 300ms ease-in-out 0ms forwards;
+}
+
+.sticky_icky_list .b:hover > ul > li:nth-child(3) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 150ms forwards;
+          animation: anime 300ms ease-in-out 150ms forwards;
+}
+
+.sticky_icky_list .b:hover > ul > li:nth-child(4) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 300ms forwards;
+          animation: anime 300ms ease-in-out 300ms forwards;
+}
+
+.sticky_icky_list .b:hover > ul > li:nth-child(5) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 450ms forwards;
+          animation: anime 300ms ease-in-out 450ms forwards;
+}
+
+.sticky_icky_list .b li {
+  height: 3vw;
+  text-align: start;
+}
+
+.sticky_icky_list .b .drop {
+  display: none;
+  list-style-type: none;
+  width: 6vw;
+  padding-right: 1vw;
+  border-radius: .5vw;
+}
+
+.sticky_icky_list .b .drop_1 {
+  margin-top: 9vw;
+}
+
+.sticky_icky_list .b .drop_2 {
+  margin-top: 18vw;
+}
+
+.sticky_icky_list .cS {
+  position: absolute;
+  left: 90.24vw;
+  top: 0.35vw;
+  list-style-type: none;
+  width: 9vw;
+  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sticky_icky_list .cS:hover {
+  background-color: whitesmoke;
+  border-radius: .5vw;
+}
+
+.sticky_icky_list .cS:hover:nth-child(1) {
+  padding-bottom: 1.125vw;
+}
+
+.sticky_icky_list .cS:hover:nth-child(2) {
+  padding-bottom: 1.125vw;
+}
+
+.sticky_icky_list .cS:hover > ul {
+  display: block;
+  position: absolute;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  padding: 0vw;
+  width: 9vw;
+}
+
+.sticky_icky_list .cS:hover > ul > li:nth-child(1) {
+  margin-top: 1vw;
+}
+
+.sticky_icky_list .cS:hover > ul > li {
+  opacity: 0;
+  padding-left: 1vw;
+}
+
+.sticky_icky_list .cS:hover > ul > li:nth-child(1) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out -150ms forwards;
+          animation: anime 300ms ease-in-out -150ms forwards;
+}
+
+.sticky_icky_list .cS:hover > ul > li:nth-child(2) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 0ms forwards;
+          animation: anime 300ms ease-in-out 0ms forwards;
+}
+
+.sticky_icky_list .cS:hover > ul > li:nth-child(3) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 150ms forwards;
+          animation: anime 300ms ease-in-out 150ms forwards;
+}
+
+.sticky_icky_list .cS:hover > ul > li:nth-child(4) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 300ms forwards;
+          animation: anime 300ms ease-in-out 300ms forwards;
+}
+
+.sticky_icky_list .cS:hover > ul > li:nth-child(5) {
+  background-color: whitesmoke;
+  -webkit-animation: anime 300ms ease-in-out 450ms forwards;
+          animation: anime 300ms ease-in-out 450ms forwards;
+}
+
+.sticky_icky_list .cS li {
+  height: 3vw;
+  text-align: start;
+}
+
+.sticky_icky_list .cS .drop {
+  display: none;
+  list-style-type: none;
+  width: 6vw;
+  padding-right: 1vw;
+  border-radius: .5vw;
+}
+
+.sticky_icky_list .cS .drop_1 {
+  margin-top: 9vw;
+}
+
+.sticky_icky_list .cS .drop_2 {
   margin-top: 18vw;
 }
 

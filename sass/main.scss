@@ -7,6 +7,11 @@ $Grey: #2f2f31;
 
 
 
+@use "sass:math";
+
+
+
+
 @keyframes left2 {
     0% {
 
@@ -199,9 +204,140 @@ $Grey: #2f2f31;
         text-align: left;
     }
 }
+@keyframes anime {
+    0%{
+        opacity: 0;
+        transform: translateY(-3.125vw);
+        transform: scale(0.3);
+    }
+    80% {
+        transform: translateY(.5208333vw);
+        transform: scale(1.2);
+    }
+    100%{
+        transform: translateY(0vw);
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+}
 
 
 
+
+@mixin mainSticky(){
+    top: 0.35vw;
+    list-style-type: none;
+    // border: 1px solid red;
+    width: 9vw;
+    height: 60px;
+    align-items: center;
+    // position: absolute;
+    &:hover {
+        background-color: whitesmoke;
+        border-radius: .5vw;
+        @for $i from 1 through 2 {
+            &:nth-child(#{$i}){
+                padding-bottom: 1.125vw;
+                // margin-top: 1.125vw;
+            }
+            // @if $i == 1 {
+            //     @for $j from 2 through 5 {
+            //         &:nth-child(#{$j}){
+            //             margin-top: 1.125vw;
+            //         }
+            //     }
+            // }
+        }
+    }
+    &:hover > ul{
+        display: block;
+        position: absolute;
+        // background-color: whitesmoke;
+        // // border: 1px solid blue;
+        perspective: 500px;
+        // font-size: 0vw;
+        padding: 0vw;
+        width: 9vw;
+        
+        > li:nth-child(1) {
+            margin-top: 1vw;
+            // border: 1px solid red;
+            
+            // background-color: red;
+        }
+        > li {
+            opacity: 0;
+            // font-size: 1vw;
+            padding-left: 1vw;
+            @for $i from 1 through 5 {
+                &:nth-child(#{$i}){
+                    background-color: whitesmoke;
+                    animation: anime 300ms ease-in-out (150ms*$i) - 300 forwards;
+                }
+            }
+        }
+    }
+    
+    // &:hover > ul > li {
+    //     outline: 1px red;
+    //     background-color: red;
+    // }
+    & li {
+        height: 3vw;
+        text-align: start;
+    }
+    // margin-right: 15vw;
+    & .drop {
+        display: none;
+        // background-color: whitesmoke;
+        // margin-top: 5vw;
+        list-style-type: none;
+        width: 6vw;
+        padding-right: 1vw;
+        border-radius: .5vw;
+        &_1 {
+            margin-top: 9vw;
+            
+        }
+        &_2 {
+            margin-top: 18vw;
+        }
+        
+        
+        // display: block;
+        // height: 15vw;
+        
+    }
+    // & .active {
+    //     display: block;
+    //     position: absolute;
+    //     // background-color: whitesmoke;
+    // //     border: 1px solid blue;
+    //     perspective: 500px;
+    //     // font-size: 0vw;
+    //     padding: 0vw;
+    //     width: 9vw;
+        
+    //     > li:nth-child(1) {
+    //         margin-top: 1vw;
+    //         border: 1px solid red;
+            
+    //         // background-color: red;
+    //     }
+    //     > li {
+    //         // opacity: 0;
+    //         // font-size: 1vw;
+    //         padding-left: 1vw;
+    //         @for $i from 1 through 5 {
+    //             &:nth-child(#{$i}){
+    //                 background-color: whitesmoke;
+    //                 // animation: anime 300ms ease-in-out (150ms*$i) - 300 forwards;
+    //             }
+    //         }
+    //     }
+    // }
+}
 
 
 
@@ -245,9 +381,24 @@ html,body {
     z-index: 150;
     background-color: white;
     &_logo {
-        & img {
-            margin-left: 10vw;
-            height: 75px;
+        flex-basis: 25vw;
+        margin-left: 1vw;
+        & h1 {
+            font-family: dual300;
+            font-size: 2vw;
+            font-weight: normal;
+            display: flex;
+            justify-content: center;
+            line-height: 0vw;
+            margin-top: 3vw;
+        }
+        & h2 {
+            font-family: allura;
+            font-size: 2vw;
+            font-weight: normal;
+            display: flex;
+            justify-content: center;
+            line-height: 1vw;
         }
     }
     &_icky {
@@ -269,59 +420,58 @@ html,body {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
-
+            // &:hover > .aS {
+            //     background-color: yellow;
+                
+            // }
+            // position: absolute;
+            // background-color: $Gold;
+            // width: 75vw;
             
-            & .main {
-                list-style-type: none;
-                // background-color: white;
-                width: 9vw;
-                height: 60px;
-                align-items: center;
-                &:hover {
-                    background-color: whitesmoke;
-                    border-radius: .5vw;
-                }
-                &:hover > ul {
-                    display: block;
-                    position: absolute;
-                    background-color: whitesmoke;
-                    border: 1px solid blue;
-                    > li:nth-child(1) {
-                        margin-top: 1vw;
-                        border: 1px solid red;
-                        // background-color: red;
-                    }
-                }
-                // &:hover > ul > li {
-                //     outline: 1px red;
-                //     background-color: red;
-                // }
-                & li {
-                    height: 3vw;
-                    text-align: start;
-                }
-                // margin-right: 15vw;
-                & .drop {
-                    display: none;
-                    // background-color: whitesmoke;
-                    // margin-top: 5vw;
-                    list-style-type: none;
-                    width: 6vw;
-                    padding-right: 1vw;
-                    border-radius: .5vw;
-                    &_1 {
-                        margin-top: 9vw;
-                        
-                    }
-                    &_2 {
-                        margin-top: 18vw;
-                    }
-                    
-                    
-                    // display: block;
-                    // height: 15vw;
-                    
-                }
+
+            & .aS {
+                position: absolute;
+                
+                // background-color: whitesmoke;
+                // border: 1px solid blue;
+                left: 27.74vw;
+                @include mainSticky();
+            }
+            & .g {
+                position: absolute;
+                // border: 1px solid blue;
+                left: 38.16vw;
+                @include mainSticky();
+            }
+            & .pB {
+                position: absolute;
+                // border: 1px solid blue;
+                left: 48.57vw;
+                @include mainSticky();
+            }
+            & .p {
+                position: absolute;
+                // border: 1px solid blue;
+                left: 58.99vw;
+                @include mainSticky();
+            }
+            & .m {
+                position: absolute;
+                // border: 1px solid blue;
+                left: 69.41vw;
+                @include mainSticky();
+            }
+            & .b {
+                position: absolute;
+                // border: 1px solid blue;
+                left: 79.82vw;
+                @include mainSticky();
+            }
+            & .cS {
+                position: absolute;
+                // border: 1px solid blue;
+                left: 90.24vw;
+                @include mainSticky();
             }
         }
     }
