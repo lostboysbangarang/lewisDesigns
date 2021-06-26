@@ -240,7 +240,10 @@ html,body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: top;
+    position: sticky;
+    top: -1px;
+    z-index: 150;
+    background-color: white;
     &_logo {
         & img {
             margin-left: 10vw;
@@ -276,13 +279,23 @@ html,body {
                 align-items: center;
                 &:hover {
                     background-color: whitesmoke;
-                    border-radius: .5vw .5vw 0vw 0vw;
+                    border-radius: .5vw;
                 }
                 &:hover > ul {
                     display: block;
                     position: absolute;
                     background-color: whitesmoke;
+                    border: 1px solid blue;
+                    > li:nth-child(1) {
+                        margin-top: 1vw;
+                        border: 1px solid red;
+                        // background-color: red;
+                    }
                 }
+                // &:hover > ul > li {
+                //     outline: 1px red;
+                //     background-color: red;
+                // }
                 & li {
                     height: 3vw;
                     text-align: start;
@@ -295,16 +308,15 @@ html,body {
                     list-style-type: none;
                     width: 6vw;
                     padding-right: 1vw;
+                    border-radius: .5vw;
                     &_1 {
                         margin-top: 9vw;
-                        border-radius: .5vw;
+                        
                     }
                     &_2 {
                         margin-top: 18vw;
                     }
-                    & li {
-                        
-                    }
+                    
                     
                     // display: block;
                     // height: 15vw;

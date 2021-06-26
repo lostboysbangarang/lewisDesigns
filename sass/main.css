@@ -374,7 +374,11 @@ html a, body a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: top;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+  z-index: 150;
+  background-color: white;
 }
 
 .sticky_logo img {
@@ -411,13 +415,19 @@ html a, body a {
 
 .sticky_icky_list .main:hover {
   background-color: whitesmoke;
-  border-radius: .5vw .5vw 0vw 0vw;
+  border-radius: .5vw;
 }
 
 .sticky_icky_list .main:hover > ul {
   display: block;
   position: absolute;
   background-color: whitesmoke;
+  border: 1px solid blue;
+}
+
+.sticky_icky_list .main:hover > ul > li:nth-child(1) {
+  margin-top: 1vw;
+  border: 1px solid red;
 }
 
 .sticky_icky_list .main li {
@@ -430,11 +440,11 @@ html a, body a {
   list-style-type: none;
   width: 6vw;
   padding-right: 1vw;
+  border-radius: .5vw;
 }
 
 .sticky_icky_list .main .drop_1 {
   margin-top: 9vw;
-  border-radius: .5vw;
 }
 
 .sticky_icky_list .main .drop_2 {
